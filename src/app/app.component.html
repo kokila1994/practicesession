@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-5">
+        <form [formGroup] ="registerform">
+            <input type="text" placeholder="enter your name" formControlName="firstname">
+            <p *ngIf="Firstname.invalid && Firstname.touched"> please enter valid data</p>
+            <br><br>
+            <input type="text" placeholder="enter your name" formControlName="lastname">
+            <p *ngIf="Lastname.invalid && Lastname.touched"> please enter valid data</p>
+            <br><br>
+            <input type="email" placeholder="enter your email here" pattern="[^@\s]+@[^@\s]+\.[^@\s]" formControlName="email"><br>
+            <p *ngIf="email.invalid && email.touched"> please enter valid data</p>
+            <span>we will not share your email id to anyone</span> 
+            <br><br>
+            <input type ="password" placeholder="enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" formControlName="password">
+            <p *ngIf="password.invalid && password.touched"> please enter valid data</p>
+            <br><br>
+            <input type ="confirmpassword" placeholder="confirm your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" formControlName="confirmpassword">
+            <p *ngIf="confirmpassword.invalid && confirmpassword.touched"> please enter valid data</p>
+            <br><br>
+            <input type="date" formControlName="dateofbirth">
+            <p *ngIf="Dateofbirth.invalid && Dateofbirth.touched">The correct format of your date of birth should be in dd/mm/yyyy</p>
+            <br><br>
+            <button (click)="onsubmit()">submit</button>
+        </form>
+    </div>
+</div>
